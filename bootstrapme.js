@@ -1,10 +1,10 @@
 chrome.browserAction.onClicked.addListener(function(tab) {
-	chrome.tabs.executeScript(tab[0].id, {file: 'jquery-1.8.2.min.js'}, function() {
+	chrome.tabs.executeScript(tab.id, {file: 'jquery-1.8.2.min.js'}, function() {
 		console.log('jQuery enabled');
-		chrome.tabs.executeScript(tab[0].id, {file: 'bootstrap.js'}, function() {
-			chrome.tabs.insertCSS(tab[0].id, {file: 'bootstrap/css/bootstrap.css'}, function() {
+		chrome.tabs.executeScript(tab.id, {file: 'bootstrap.js'}, function() {
+			chrome.tabs.insertCSS(tab.id, {file: 'bootstrap/css/bootstrap.css'}, function() {
 				console.log('injected CSS');
 			});
 		});
-	}
+	});
 });
