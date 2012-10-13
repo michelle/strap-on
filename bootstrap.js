@@ -31,7 +31,9 @@ $(function() {
 	});
 	$($('ul')[0]).remove();
 	
-	var title = $('<a></a>').addClass('brand').append(document.title.split(' ')[0]);
+	var titletext = window.location.hostname.split('.').slice(-2, -1).pop();
+	titletext = titletext[0].toUpperCase() + titletext.substr(1);
+	var title = $('<a></a>').addClass('brand').append(titletext);
 	var collapse = $('<div></div>').addClass('nav-collapse collapse').append(ourul);
 	var container = $('<div></div>').addClass('container').append(title).append(collapse);
 	var inner = $('<div></div>').addClass('navbar-inner').append(container);
